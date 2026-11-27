@@ -36,6 +36,18 @@ def releaseStorePass = System.getenv('CAMELLIA_RELEASE_STORE_PASS') ?: releaseSi
 // 私钥口令缺省与密钥库口令相同（本项目 550cc 两者不同，见 build-release.py 提示）
 def releaseKeyPass = System.getenv('CAMELLIA_RELEASE_KEY_PASS') ?: releaseSigningProps.getProperty('keyPassword', '') ?: releaseStorePass
 
+// —— HyperCeiler 式自动版本命名：versionCode = 基数 + git提交数；versionName = 基版本 + 渠道后缀 ——
+def vcodeBase = 164
+def gitCommitCount = {
+    try {
+        def proc = new ProcessBuilder('git', 'rev-list', '--count', 'HEAD').directory(rootProject.projectDir).start()
+        def out = proc.inputStream.text.trim(); proc.waitFor()
+        return (out ==~ /\d+/) ? out.toInteger() : 0
+    } catch (Throwable t) { return 0 }
+}
+def gitN = gitCommitCount()
+def vcodeNow = vcodeBase + gitN
+
 android {
     namespace 'com.hyper.Camellia'
     compileSdkVersion "android-37.2"
@@ -46,8 +58,8 @@ android {
         applicationId 'com.hyper.Camellia'
         minSdk 26
         targetSdk 35
-        versionCode 164
-        versionName '2.37.11'
+        versionCode vcodeNow
+        versionName '1.0.0'
     }
 
     // 沿用 build.sh 时代的目录布局：src/ 同时放 Java 与 Kotlin
@@ -99,10 +111,12 @@ android {
             // 需要未签名包时，用 tools/apk_unsigned.py 从构建产物剥离签名后 zipalign。
             signingConfig signingConfigs.mod
             minifyEnabled false
+            versionNameSuffix "-" + new Date().format('MMddHHmm') + "-r" + vcodeNow
         }
         release {
             signingConfig signingConfigs.rel
             minifyEnabled false
+            versionNameSuffix "-" + new Date().format('yyyyMMdd')
         }
     }
 
