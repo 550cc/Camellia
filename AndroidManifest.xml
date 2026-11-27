@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- package / versionCode / versionName / uses-sdk 由 build.gradle 提供
+     （Gradle 不允许 manifest 再声明这些；build.sh 会在 aapt2 阶段自动补回） -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 「强制结束小米互传」按钮：无 root 时的回退手段 -->
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <!-- 开机自启：BOOT_COMPLETED 是通吃所有 root 管理器的启动通道（见 BootReceiver） -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- 跨进程配置通道：模块侧把配置写进 Settings.System 公共键，目标进程无需权限即可读。
+         写需要此权限（用户授权或 root appops 放行），未授权时模块会静默跳过并走其他通道。 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!-- 仅用于在设置页显示 MT 是否已安装（Android 11+ 包可见性） -->
+    <queries>
+        <package android:name="bin.mt.plus" />
+        <package android:name="bin.mt.plus.canary" />
+        <!-- 设置页要显示小米互传版本号 -->
+        <package android:name="com.miui.mishare.connectivity" />
+        <!-- 设置页要显示小米画报版本号 / 跳转其自选图片页 -->
+        <package android:name="com.mfashiongallery.emag" />
+        <!-- 「识别 BGM」识曲 App 选择器：检测第三方识曲 App 是否已安装（Android 11+ 包可见性） -->
+        <package android:name="com.miui.player" />
+        <package android:name="com.netease.cloudmusic" />
+        <package android:name="com.kugou.android" />
+        <package android:name="com.kugou.android.lite" />
+        <package android:name="com.tencent.qqmusic" />
+        <!-- 桌面快捷方式「小窗」：中转页要以显式组件启动任意桌面应用（Android 11+ 包可见性） -->
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".App"
+        android:label="Camellia"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:description="@string/moddesc"
+        android:forceQueryable="true"
+        android:enableOnBackInvokedCallback="true">
+
+        <!-- libxposed Service：框架通过它把 IXposedService 的 binder 送进本模块进程。
+             authority 约定必须是 <applicationId>.XposedService（见 libxposed/service 的 aar manifest）。
+             缺了它，设置页永远拿不到框架服务 → 无法把设置写进框架的 remote preferences
+             → system_server 侧（长按菜单「小窗」开关）读到的永远是默认值 false。 -->
+        <provider
+            android:name="io.github.libxposed.service.XposedProvider"
+            android:authorities="com.hyper.Camellia.XposedService"
+            android:exported="true"
+            tools:ignore="ExportedContentProvider" />
+
+        <!-- 模块设置入口：LSPosed 通过 MODULE_SETTINGS 分类打开，不占用桌面图标 -->
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="true"
+            android:label="Camellia"
+            android:theme="@android:style/Theme.Material.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS" />
+            </intent-filter>
+        </activity>
+
+        <!-- 桌面快捷方式「小窗」的中转页（无 UI、立即结束、不进最近任务） -->
+        <activity
+            android:name=".ShortcutFreeformActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- 跨进程配置 provider（只读、无权限要求）：目标进程（画报 / 互传 / system_server）
+             通过 content://com.hyper.Camellia.cfg/cfg 拉取模块配置。
+             Settings.System 在 HyperOS 上拒绝普通应用写自定义键，provider 是唯一稳定通道。 -->
+        <provider
+            android:name=".CfgProvider"
+            android:authorities="com.hyper.Camellia.cfg"
+            android:exported="true"
+            android:enabled="true" />
+
+        <!-- 目标进程（互传/画报）运行期状态回传（广播） -->
+        <receiver
+            android:name=".StatusReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.hyper.Camellia.action.STATUS" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 开机自启（通吃所有 root 管理器）+ 覆盖安装后自动重部署 -->
+        <receiver
+            android:name=".BootReceiver"
+            android:exported="true"
+            android:enabled="true">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 目标进程来拉取配置：设置页改动时目标进程可能不在运行，靠它补上 -->
+        <receiver
+            android:name=".CfgReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.hyper.Camellia.action.CFG_REQ" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 桌面图标：可动态启用/禁用，用于「隐藏桌面图标」 -->
+        <activity-alias
+            android:name=".LauncherAlias"
+            android:targetActivity=".SettingsActivity"
+            android:exported="true"
+            android:label="Camellia"
+            android:icon="@mipmap/ic_launcher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+    </application>
+</manifest>

@@ -1,0 +1,53 @@
+小米互传改MT管理器  (com.yuyu.misharemt2)
+第三方开源组件与许可声明
+================================================================
+
+本模块在运行时引用了以下第三方开源库，均为原样引用、未作修改。
+各库的版权归其各自作者所有，遵循其原始许可。
+
+----------------------------------------------------------------
+1. DexKit 2.3.0
+   坐标: org.luckypray:dexkit:2.3.0
+   主页: https://github.com/LuckyPray/DexKit
+   版权: Copyright (c) LuckyPray
+   许可: Apache License 2.0
+         其中 Core/ 目录（对应本模块内的 lib/arm64-v8a/libdexkit.so）
+         采用 GNU Lesser General Public License v3.0 (LGPL-3.0)
+   许可全文:
+     Apache-2.0 : https://www.apache.org/licenses/LICENSE-2.0
+     LGPL-3.0   : https://www.gnu.org/licenses/lgpl-3.0.html
+   说明: LGPL-3.0 要求分发二进制时提供对应源码的获取途径，
+         源码见上述项目主页（Core/ 目录）。
+   用途: 运行时解析 dex，按结构化条件定位小米互传的混淆方法，
+         使模块在互传升级后仍能自动适配。
+
+----------------------------------------------------------------
+2. Kotlin stdlib 2.0.21
+   坐标: org.jetbrains.kotlin:kotlin-stdlib:2.0.21
+   主页: https://github.com/JetBrains/kotlin
+   版权: Copyright (c) JetBrains s.r.o. and Kotlin Programming Language contributors
+   许可: Apache License 2.0
+   用途: DexKit 的运行期依赖。
+
+----------------------------------------------------------------
+3. FlatBuffers Java 23.5.26
+   坐标: com.google.flatbuffers:flatbuffers-java:23.5.26
+   主页: https://github.com/google/flatbuffers
+   版权: Copyright (c) Google Inc.
+   许可: Apache License 2.0
+   用途: DexKit 的 Java <-> native 数据协议。
+
+----------------------------------------------------------------
+4. libxposed API
+   坐标: io.github.libxposed:api
+   主页: https://github.com/LibXposed
+   用途: 模块与 Xposed / LSPosed 框架之间的接口定义。
+
+----------------------------------------------------------------
+鸣谢
+   模块作者: 酷安 @咸鱼鱼o   https://www.coolapk.com/u/2487707
+   方案鸣谢: 酷安 @堇森      https://www.coolapk.com/u/37937816
+             「把互传收到文件的打开落点改到 MT 管理器」的思路来自他的方案，
+             本模块在其思路上重写为版本自适应实现（不硬编码混淆类名/方法名）。
+
+本文件随模块 APK 一同分发。

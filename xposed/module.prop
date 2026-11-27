@@ -1,0 +1,10 @@
+id=com.hyper.Camellia
+name=Camellia
+version=v2.14.3
+versionCode=56
+author=yuyu
+description=【互传】接收文件后通知栏打开改为 MT 管理器（文档/音频走 MT，图片/视频/联系人保持原样），4.0.5~5.4.2 自适应、升级无需重打包；【小米画报】自选壁纸目录同步（目录可配置，默认 Pictures/小米画报/），自动入库/清理失效项；【手机管家】省电与电池、前置摄像助手、隐私与安全、游戏/视频工具箱等解锁与拦截（按 HyperCeiler 逐项复刻）；【小窗】桌面长按图标快捷菜单注入「小窗」项，侧边栏快切小窗。全部版本自适应定位，不硬编码混淆类名。
+minApiVersion=101
+targetApiVersion=102
+autoHotReload=true
+staticScope=true

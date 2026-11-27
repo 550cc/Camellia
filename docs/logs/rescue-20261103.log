@@ -1,0 +1,208 @@
+[up=3692] BOOT_NEW id=ab74c0de-ef1e-4254-99f6-7f7eaa8b1af4 -> state reset
+[up=3699] BOOT_NEW id=ab74c0de-ef1e-4254-99f6-7f7eaa8b1af4 -> state reset
+[up=3719] BOOT_NEW id=ab74c0de-ef1e-4254-99f6-7f7eaa8b1af4 -> state reset
+[up=5695] UI reject key=target
+[up=5713] UI set nofx_max=3
+[up=5720] UI set nofx_max=2
+[up=6169] UI set auto_fix=1
+[up=6172] UI set auto_fix=0
+[up=8071] SHIELD CLI on ok
+[up=8205] SHIELD_OK (周期校验)
+[up=9144] SHIELD_OK (周期校验)
+[up=9225] SHIELD_OK (周期校验)
+[up=39] BOOT_NEW ab74c0de-ef1e-4254-99f6-7f7eaa8b1af4 -> a1e433db-2916-4a39-bc39-4b80a9b7cbef state reset
+[up=1074] SHIELD_OK (周期校验)
+[up=2445] SHIELD_OK (周期校验)
+[up=4149] A_MOD_ALREADY_DISABLED id=systemui_mount (disable 已生效，不重启)
+[up=4166] SHIELD_OK (周期校验)
+[up=4451] SHIELD_OK (周期校验)
+[up=4562] SHIELD_OK (周期校验)
+[up=4594] SHIELD_OK (周期校验)
+[up=5371] SHIELD_OK (周期校验)
+[up=6755] SHIELD_OK (周期校验)
+[up=6797] SHIELD_OK (周期校验)
+[up=6862] SHIELD_OK (周期校验)
+[up=6862] WATCH_ARMED np=2 (CE 解锁)
+[up=6948] SHIELD_OK (周期校验)
+[up=7033] SHIELD_OK (周期校验)
+[up=7033] WATCH_ARMED np=2 (CE 解锁)
+[up=7170] SHIELD_OK (周期校验)
+[up=7170] WATCH_SEED pkg=com.android.systemui stamp=0
+[up=7170] WATCH_SEED pkg=miui.systemui.plugin stamp=0
+[up=7170] WATCH_ARMED np=2 (CE 解锁)
+[up=7249] SHIELD_OK (周期校验)
+[up=7249] WATCH_SEED pkg=com.android.systemui stamp=1332707988
+[up=7249] WATCH_SEED pkg=miui.systemui.plugin stamp=1249748910
+[up=7249] WATCH_ARMED np=2 (CE 解锁)
+[up=7309] INSTALL_EVENT pkg=com.android.systemui prev=111 cur=1332707988 -> 重置判定
+[up=7309] CRASH_HIST_RESET
+[up=7901] SHIELD_OK (周期校验)
+[up=10478] A_MOD_ALREADY_DISABLED id=systemui_mount (disable 已生效，不重启)
+[up=10478] A_ALIVE_SKIP sysui alive circ=0/3 win=180s
+[up=10545] A_MOD_ALREADY_DISABLED id=systemui_mount (disable 已生效，不重启)
+[up=10545] A_ALIVE_SKIP sysui alive circ=0/3 win=180s
+[up=10551] A_MOD_ALREADY_DISABLED id=systemui_mount (disable 已生效，不重启)
+[up=10551] A_TRIGGER sysui crashloop circ=3 thr=3 win=180s
+[up=10551] A_ATTR sysui why=dropbox:system_app_anr@1793372209941.txt.gz(cnt=1)
+[up=10551] A_NO_OVL pkg=com.android.systemui (ROM builtin, refuse to delete)
+[up=10646] SHIELD_OK (周期校验)
+[up=40] BOOT_NEW a1e433db-2916-4a39-bc39-4b80a9b7cbef -> 478962df-2be9-44a9-9de1-25e15e39114c state reset
+[up=640] PID_CHANGE com.android.systemui 7782 -> 7789
+[up=640] CRASH_WIN db=0(none ) pid=1 win=60s thr=3
+[up=670] CRASH_WIN db=0(none ) pid=1 win=60s thr=3
+[up=700] CRASH_WIN db=0(none ) pid=1 win=60s thr=3
+[up=928] PID_CHANGE com.android.systemui 7789 -> 0
+[up=928] CRASH_WIN db=0(none ) pid=1 win=60s thr=3
+[up=39] BOOT_NEW 478962df-2be9-44a9-9de1-25e15e39114c -> 7d58ace8-9c38-4f09-81b2-ba7ce2a91772 state reset
+[up=329] SHIELD_OK (周期校验)
+[up=333] A_MOD_ALREADY_DISABLED id=systemui_mount (disable 已生效，不重启)
+[up=333] A_ALIVE_SKIP sysui alive circ=0/3 win=180s
+[up=359] SHIELD_OK (周期校验)
+[up=360] A_MOD_ALREADY_DISABLED id=systemui_mount (disable 已生效，不重启)
+[up=360] A_ALIVE_SKIP sysui alive circ=0/3 win=180s
+[up=451] PID_CHANGE com.android.systemui 7599 -> 0
+[up=451] CRASH_WIN db=0(none ) pid=1 win=60s thr=3
+[up=41] BOOT_NEW 7d58ace8-9c38-4f09-81b2-ba7ce2a91772 -> f07cf14a-598a-4a0d-b159-8ad6b57445d0 state reset
+[up=465] CRASH_WIN db=0(none ) pid=1 win=60s thr=3
+[up=495] CRASH_WIN db=0(none ) pid=1 win=60s thr=3
+[up=667] SHIELD_OK (周期校验)
+[up=726] PHASE_DET ce_avail='true' up=726 ce=1 de=0
+[up=726] SHIELD_OK (周期校验)
+[up=727] PHASE_DET ce_avail='true' up=727 ce=1 de=0
+[up=727] A_MOD_ALREADY_DISABLED id=systemui_mount (disable 已生效，不重启)
+[up=727] A_ALIVE_SKIP sysui alive circ=0/3 win=180s
+[up=4327] SHIELD_OK (周期校验)
+[up=7930] SHIELD_OK (周期校验)
+[up=11531] SHIELD_OK (周期校验)
+[up=15132] SHIELD_OK (周期校验)
+[up=18732] SHIELD_OK (周期校验)
+[up=22335] SHIELD_OK (周期校验)
+[up=25936] SHIELD_OK (周期校验)
+[up=29537] SHIELD_OK (周期校验)
+[up=30508] PHASE_DET ce_avail='true' up=30508 ce=1 de=0
+[up=30508] PID_CHANGE com.android.systemui 7679 -> 0
+[up=30508] CRASH_WIN db=0(none ) pid=1 win=60s thr=3
+[up=42] PHASE_DET ce_avail='' up=42 ce=0 de=1
+[up=42] BOOT_NEW f07cf14a-598a-4a0d-b159-8ad6b57445d0 -> d2c55d11-9f3e-4471-b31f-e0a95d06907b state reset
+[up=102] A_MOD_ALREADY_DISABLED id=systemui_mount (disable 已生效，不重启)
+[up=102] A_ALIVE_SKIP sysui alive circ=0/3 win=180s
+[up=117] PHASE_DET ce_avail='true' up=117 ce=1 de=0
+[up=1632] INSTALL_EVENT pkg=miui.systemui.plugin prev=1249748910 cur=1768115740 -> 重置判定
+[up=1632] CRASH_HIST_RESET
+[up=1636] PHASE_DET ce_avail='true' up=1636 ce=1 de=0
+[up=1636] PID_CHANGE com.android.systemui 7722 -> 0
+[up=1636] CRASH_WIN db=0(none ) pid=1 win=60s thr=3
+[up=41] PHASE_DET ce_avail='' up=41 ce=0 de=1
+[up=41] BOOT_NEW d2c55d11-9f3e-4471-b31f-e0a95d06907b -> 9e31f6d4-d029-4d9d-9830-971d0a4eb8f1 state reset
+[up=42] A_PID_CHANGE sysui 7722 -> 0
+[up=101] A_PID_CHANGE sysui 7798 -> 13337
+[up=101] A_MOD_ALREADY_DISABLED id=systemui_mount (disable 已生效，不重启)
+[up=101] A_ALIVE_SKIP sysui alive circ=2/3 win=180s
+[up=101] PID_CHANGE com.android.systemui 7798 -> 13337
+[up=101] CRASH_WIN db=3(plugin system_app_crash@1793661754962.txt) pid=1 win=60s thr=3
+[up=101] DROPBOX_NEW 1793661754962 (辅助信息)
+[up=101] TICK_ATTR plugin why=dropbox:system_app_crash@1793661754962.txt(cnt=3)
+[up=101] TICK_ACT pkg=miui.systemui.plugin attr=plugin -> ui_rescue_chain
+[up=101] BAK_SAVE /data/adb/camellia/bak/miui.systemui.plugin@101 src=/data/app/~~z-fr_r7_6-qBKeUw6Accqg==/miui.systemui.plugin-9ZyRaiCrP_dIJ5aCsotPzQ==/base.apk sha=243e4b13771bc4da00daca51000964ece6684d750d3358dcba3956b17b77ea8d
+[up=101] SNAP pkg=miui.systemui.plugin why=before_uninstall_update ovl=/data/app/~~z-fr_r7_6-qBKeUw6Accqg==/miui.systemui.plugin-9ZyRaiCrP_dIJ5aCsotPzQ== -> /data/adb/camellia/bak/miui.systemui.plugin@101
+[up=101] UI_RESCUE uninstall_update pkg=miui.systemui.plugin -> 已卸更新 miui.systemui.plugin -> /product/app/MIUISystemUIPlugin
+[up=101] A_HIST_RESET
+[up=101] SOFT_REBOOT cmd=[killall system_server] sr_count=1
+[up=129] PHASE_DET ce_avail='true' up=129 ce=1 de=0
+[up=131] INSTALL_EVENT pkg=miui.systemui.plugin prev=1768115740 cur=1249748910 -> 重置判定
+[up=131] CRASH_HIST_RESET
+[up=131] PID_CHANGE com.android.systemui 13337 -> 15361
+[up=131] CRASH_WIN db=3(plugin system_app_crash@1793661754962.txt) pid=1 win=60s thr=3
+[up=131] TICK_ATTR plugin why=dropbox:system_app_crash@1793661754962.txt(cnt=3)
+[up=131] TICK_NO_MATCH attr=plugin (配置 target 里无对应包，本轮不动)
+[up=161] CRASH_WIN db=0(none ) pid=1 win=60s thr=3
+[up=191] CRASH_WIN db=0(none ) pid=1 win=60s thr=3
+[up=671] INSTALL_EVENT pkg=miui.systemui.plugin prev=1249748910 cur=1768114636 -> 重置判定
+[up=671] CRASH_HIST_RESET
+[up=671] PID_CHANGE com.android.systemui 15361 -> 6745
+[up=671] CRASH_WIN db=2(plugin system_app_crash@1793662322881.txt) pid=1 win=60s thr=3
+[up=671] DROPBOX_NEW 1793662322881 (辅助信息)
+[up=701] PID_CHANGE com.android.systemui 6745 -> 7907
+[up=701] CRASH_WIN db=4(plugin system_app_crash@1793662351917.txt) pid=2 win=60s thr=3
+[up=701] DROPBOX_NEW 1793662351917 (辅助信息)
+[up=701] TICK_ATTR plugin why=dropbox:system_app_crash@1793662351917.txt(cnt=4)
+[up=701] TICK_ACT pkg=miui.systemui.plugin attr=plugin -> ui_rescue_chain
+[up=702] BAK_SAVE /data/adb/camellia/bak/miui.systemui.plugin@701 src=/data/app/~~xUr3_1828Phegrut850l9Q==/miui.systemui.plugin-rUT_9MF04o0mfN-uuwe02g==/base.apk sha=243e4b13771bc4da00daca51000964ece6684d750d3358dcba3956b17b77ea8d
+[up=702] SNAP pkg=miui.systemui.plugin why=before_uninstall_update ovl=/data/app/~~xUr3_1828Phegrut850l9Q==/miui.systemui.plugin-rUT_9MF04o0mfN-uuwe02g== -> /data/adb/camellia/bak/miui.systemui.plugin@701
+[up=702] UI_RESCUE uninstall_update pkg=miui.systemui.plugin -> 已卸更新 miui.systemui.plugin -> /product/app/MIUISystemUIPlugin
+[up=702] A_HIST_RESET
+[up=702] SOFT_REBOOT cmd=[killall system_server] sr_count=2
+[up=731] HALT soft_reboot_limit(2/2)
+[up=968] PHASE_DET ce_avail='true' up=968 ce=1 de=0
+[up=976] PHASE_DET ce_avail='true' up=976 ce=1 de=0
+[up=992] HALT_CLEARED by cli
+[up=1006] SHIELD_OK (周期校验)
+[up=1006] INSTALL_EVENT pkg=miui.systemui.plugin prev=1768114636 cur=1249748910 -> 重置判定
+[up=1006] CRASH_HIST_RESET
+[up=1006] PID_CHANGE com.android.systemui 7907 -> 10224
+[up=1006] CRASH_WIN db=0(none ) pid=1 win=60s thr=3
+[up=1036] CRASH_WIN db=0(none ) pid=1 win=60s thr=3
+[up=1066] CRASH_WIN db=0(none ) pid=1 win=60s thr=3
+[up=1523] PHASE_DET ce_avail='true' up=1522 ce=1 de=0
+[up=1523] SHIELD_OK (周期校验)
+[up=4596] PHASE_DET ce_avail='true' up=4596 ce=1 de=0
+[up=4596] SHIELD_OK (周期校验)
+[up=5049] PHASE_DET ce_avail='true' up=5049 ce=1 de=0
+[up=5049] SHIELD_OK (周期校验)
+[up=6340] INSTALL_EVENT pkg=com.android.systemui prev=1332707988 cur=1826272878 -> 重置判定
+[up=6340] CRASH_HIST_RESET
+[up=39] PHASE_DET ce_avail='' up=39 ce=0 de=1
+[up=39] BOOT_NEW 9e31f6d4-d029-4d9d-9830-971d0a4eb8f1 -> c7fdd860-6230-4f09-8872-9488c1e78be0 state reset
+[up=39] PID_CHANGE com.android.systemui 10224 -> 0
+[up=39] CRASH_WIN db=0 proc=0(none ) pid=1 win=60s thr=3
+[up=66] PHASE_DET ce_avail='true' up=66 ce=1 de=0
+[up=69] CRASH_WIN db=0 proc=0(none ) pid=1 win=60s thr=3
+[up=99] CRASH_WIN db=0 proc=0(none ) pid=1 win=60s thr=3
+[up=189] PID_CHANGE com.android.systemui 7571 -> 31168
+[up=189] CRASH_WIN db=1 proc=1(plugin system_app_crash@1793668195738.txt) pid=1 win=60s thr=3
+[up=189] DROPBOX_NEW 1793668195738 (辅助信息)
+[up=219] PID_CHANGE com.android.systemui 31168 -> 5257
+[up=219] CRASH_WIN db=2 proc=2(plugin system_app_crash@1793668231860.txt) pid=2 win=60s thr=3
+[up=219] DROPBOX_NEW 1793668231860 (辅助信息)
+[up=249] PID_CHANGE com.android.systemui 5257 -> 8762
+[up=249] CRASH_WIN db=2 proc=2(plugin system_app_crash@1793668268862.txt) pid=3 win=60s thr=3
+[up=249] DROPBOX_NEW 1793668268862 (辅助信息)
+[up=249] TICK_ATTR plugin why=dropbox:system_app_crash@1793668268862.txt(cnt=2)
+[up=249] TICK_NO_OVL attr=plugin (目标包无 /data/app 覆盖层，无可删物)
+[up=279] PID_CHANGE com.android.systemui 8762 -> 9638
+[up=279] CRASH_WIN db=2 proc=2(plugin system_app_crash@1793668290113.txt) pid=3 win=60s thr=3
+[up=279] DROPBOX_NEW 1793668290113 (辅助信息)
+[up=279] TICK_ATTR plugin why=dropbox:system_app_crash@1793668290113.txt(cnt=2)
+[up=279] TICK_NO_OVL attr=plugin (目标包无 /data/app 覆盖层，无可删物)
+[up=309] PID_CHANGE com.android.systemui 9638 -> 10819
+[up=309] CRASH_WIN db=2 proc=2(plugin system_app_crash@1793668316040.txt) pid=3 win=60s thr=3
+[up=309] DROPBOX_NEW 1793668316040 (辅助信息)
+[up=309] TICK_ATTR plugin why=dropbox:system_app_crash@1793668316040.txt(cnt=2)
+[up=309] TICK_NO_OVL attr=plugin (目标包无 /data/app 覆盖层，无可删物)
+[up=339] PID_CHANGE com.android.systemui 10819 -> 12215
+[up=339] CRASH_WIN db=2 proc=2(plugin system_app_crash@1793668344817.txt) pid=3 win=60s thr=3
+[up=339] DROPBOX_NEW 1793668344817 (辅助信息)
+[up=339] TICK_ATTR plugin why=dropbox:system_app_crash@1793668344817.txt(cnt=2)
+[up=339] TICK_NO_OVL attr=plugin (目标包无 /data/app 覆盖层，无可删物)
+[up=369] PID_CHANGE com.android.systemui 12215 -> 13712
+[up=369] CRASH_WIN db=1 proc=1(plugin system_app_crash@1793668344817.txt) pid=3 win=60s thr=3
+[up=369] TICK_ATTR plugin why=dropbox:system_app_crash@1793668344817.txt(cnt=1)
+[up=369] TICK_NO_OVL attr=plugin (目标包无 /data/app 覆盖层，无可删物)
+[up=399] PID_CHANGE com.android.systemui 13712 -> 14940
+[up=399] CRASH_WIN db=0 proc=0(none ) pid=3 win=60s thr=3
+[up=399] TICK_ATTR sysui why=only-sysui-overlay(lu=0)
+[up=399] TICK_ACT pkg=com.android.systemui attr=sysui -> ui_rescue_chain
+[up=399] UI_RESCUE 跳过卸更新 pkg=com.android.systemui (界面本体无更新层 -> 删包回滚)
+[up=399] UI_RESCUE fix_pkg pkg=com.android.systemui (删覆盖层回滚)
+[up=400] BAK_SAVE /data/adb/camellia/bak/com.android.systemui@399 src=/data/app/~~XzUTsTBKKYdJD_Bhh9NUGg==/com.android.systemui-2LwiFnuP2aZb9zzFYPC12Q==/base.apk sha=9af08c49ea6e412e52a5ffba0d8ca0bc91034b6092c25a4af4776ac010e13cf7
+[up=400] FIX_START pkg=com.android.systemui ovl=/data/app/~~XzUTsTBKKYdJD_Bhh9NUGg==/com.android.systemui-2LwiFnuP2aZb9zzFYPC12Q== bak=/data/adb/camellia/bak/com.android.systemui@399
+[up=400] FIX_DONE pkg=com.android.systemui removed=/data/app/~~XzUTsTBKKYdJD_Bhh9NUGg==/com.android.systemui-2LwiFnuP2aZb9zzFYPC12Q==
+[up=400] A_HIST_RESET
+[up=400] CRASH_HIST_RESET
+[up=400] SOFT_REBOOT cmd=[killall system_server] sr_count=1
+[up=429] INSTALL_EVENT pkg=com.android.systemui prev=1826272878 cur=1332707988 -> 重置判定
+[up=429] CRASH_HIST_RESET
+[up=429] PID_CHANGE com.android.systemui 14940 -> 17910
+[up=429] CRASH_WIN db=0 proc=0(none ) pid=1 win=60s thr=3
+[up=459] CRASH_WIN db=0 proc=0(none ) pid=1 win=60s thr=3
+[up=489] CRASH_WIN db=0 proc=0(none ) pid=1 win=60s thr=3

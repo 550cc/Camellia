@@ -1,0 +1,1160 @@
+[11-02 15:41:54] up=1123.91 daemon boot start (de=/data/adb/camellia booted=1 up=1123.90)
+OK pid=20824 nice=-20 n=1 dir=/dev/bhyncdkz/.x
+[11-02 15:46:23] up=1392.85 binary refreshed seed=/data/adb/camellia/camd sig=118-1793605579969
+[11-02 15:46:24] up=1393.97 started pid=17476 nice=-20 work=/dev/bhyncdkz/.x seed=/data/adb/camellia/camd booted=1
+[11-02 16:43:01] up=4791.26 binary refreshed seed=/data/adb/camellia/camd sig=118-1793605579969
+[11-02 16:43:02] up=4792.54 started pid=28995 nice=-20 work=/dev/bhyncdkz/.x seed=/data/adb/camellia/camd booted=1
+[11-02 16:50:50] up=5259.96 binary refreshed seed=/data/adb/camellia/camd sig=118-1793609422790
+[11-02 16:50:51] up=5261.07 started pid=5057 nice=-20 work=/dev/bhyncdkz/.x seed=/data/adb/camellia/camd booted=1
+[11-02 16:57:25] up=5655.47 binary refreshed seed=/data/adb/camellia/camd sig=
+[11-02 16:57:27] up=5656.61 started pid=13508 nice=-20 work=/dev/bhyncdkz/.x seed=/data/adb/camellia/camd booted=1
+[11-02 16:57:53] up=5683.23 started pid=13926 nice=-20 work=/dev/bhyncdkz/.x seed=/data/adb/camellia/camd booted=1
+[11-02 17:00:41] up=5850.60 binary refreshed seed=/data/adb/camellia/camd sig=118-1793610031937
+[11-02 17:00:42] up=5851.71 started pid=17474 nice=-20 work=/dev/bhyncdkz/.x seed=/data/adb/camellia/camd booted=1
+[11-02 17:04:32] up=6082.41 binary refreshed seed=/data/adb/camellia/camd sig=
+[11-02 17:04:34] up=6083.69 started pid=23761 nice=-20 work=/dev/bhyncdkz/.x seed=/data/adb/camellia/camd booted=1
+[11-02 17:15:51] up=6761.12 binary refreshed seed=/data/adb/camellia/camd sig=118-1793610941484
+[11-02 17:15:52] up=6762.28 started pid=5405 nice=-20 work=/dev/bhyncdkz/.x seed=/data/adb/camellia/camd booted=1
+[11-02 17:39:54] up=8203.94 binary refreshed seed=/data/adb/camellia/camd sig=118--1683937728
+[11-02 17:39:55] up=8205.23 started pid=3091 nice=-20 work=/dev/bhyncdkz/.x seed=/data/adb/camellia/camd booted=1
+[11-02 17:55:34] up=9143.88 binary refreshed seed=/data/adb/camellia/camd sig=118-1793613330876
+[11-02 17:55:35] up=9144.98 started pid=16229 nice=-20 work=/dev/bhyncdkz/.x seed=/data/adb/camellia/camd booted=1
+[11-02 17:56:54] up=9224.53 binary refreshed seed=/data/adb/camellia/camd sig=118-1793613412403
+[11-02 17:56:56] up=9225.64 started pid=20271 nice=-20 work=/dev/bhyncdkz/.x seed=/data/adb/camellia/camd booted=1
+[11-02 18:49:33] up=37.19 daemon boot start (de=/data/adb/camellia booted= up=37.19)
+[11-02 18:49:34] up=38.31 binary refreshed seed=/data/adb/camellia/camd sig=118-1793613412403
+[11-02 18:49:35] up=39.38 started pid=5142 nice= work=/dev/jffalntk/.x seed=/data/adb/camellia/camd booted=
+OK pid=5142 nice= n=1 dir=/dev/jffalntk/.x
+[11-02 19:06:50] up=1073.53 binary refreshed seed=/data/adb/camellia/camd sig=118-1793617606847
+[11-02 19:06:50] up=1073.68 binary refreshed seed=/data/adb/camellia/camd sig=118-1793617606847
+OK pid=2948 nice= n=1 dir=/dev/jffalntk/.x
+[11-02 19:06:51] up=1074.65 started pid=2948 nice=-20 work=/dev/jffalntk/.x seed=/data/adb/camellia/camd booted=1
+[11-02 19:29:41] up=2444.33 binary refreshed seed=/data/adb/camellia/camd sig=118-1793618978057
+[11-02 19:29:42] up=2445.46 started pid=21644 nice=-20 work=/dev/jffalntk/.x seed=/data/adb/camellia/camd booted=1
+[11-02 20:03:08] up=4451.38 started pid=30309 nice= work=/dev/jffalntk/.x seed=/data/adb/camellia/camd booted=1
+OK pid=30309 nice= n=1 dir=/dev/jffalntk/.x
+[11-02 20:04:58] up=4560.76 binary refreshed seed=/data/adb/camellia/camd sig=118--1675452728
+[11-02 20:04:59] up=4561.95 started pid=31369 nice= work=/dev/jffalntk/.x seed=/data/adb/camellia/camd booted=1
+OK pid=31369 nice= n=1 dir=/dev/jffalntk/.x
+[11-02 20:05:30] up=4593.44 binary refreshed seed=/data/adb/camellia/camd sig=118-1793620877
+[11-02 20:05:31] up=4594.63 started pid=31620 nice= work=/dev/jffalntk/.x seed=/data/adb/camellia/camd booted=1
+OK pid=31620 nice= n=1 dir=/dev/jffalntk/.x
+[11-02 20:18:27] up=5370.71 binary refreshed seed=/data/adb/camellia/camd sig=118-1793621906
+[11-02 20:18:28] up=5370.82 busybox seeded src=/data/adb/ksu/bin/busybox size=1710600
+[11-02 20:18:29] up=5371.85 started pid=15892 nice= work=/dev/jffalntk/.x seed=/data/adb/camellia/camd booted=1
+OK pid=15892 nice= n=1 dir=/dev/jffalntk/.x
+[11-02 20:40:59] up=6722.29 binary refreshed seed=/data/adb/camellia/camd sig=322767-1793623254
+/dev/jffalntk/.x/camd[1]: syntax error: unexpected '('
+[11-02 20:40:59] up=6722.45 started pid= nice= work=/dev/jffalntk/.x seed=/data/adb/camellia/camd booted=1
+/dev/jffalntk/.x/camd[1]: syntax error: unexpected '('
+[11-02 20:40:59] up=6722.50 FAIL camd not running after start
+FAIL camd not running
+[11-02 20:41:00] up=6723.71 started pid= nice=0
+0
+0
+-20
+-20
+-20
+-20
+-20
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+0
+0
+0
+-20
+0
+19
+-20
+-20
+0
+-20
+0
+-20
+0
+0
+-20
+15
+-20
+-20
+-20
+-20
+-20
+-20
+0
+-20
+0
+0
+0
+0
+0
+0
+0
+-20
+-20
+0
+0
+0
+-20
+0
+-20
+-20
+0
+0
+19
+-20
+5
+10
+10
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+-20
+-20
+0
+0
+0
+0
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+0
+0
+-10
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+0
+0
+-20
+-20
+0
+0
+0
+0
+-20
+0
+-20
+-20
+-20
+0
+0
+0
+0
+0
+-20
+0
+0
+0
+-20
+0
+0
+-20
+-20
+0
+-20
+0
+-20
+0
+0
+-20
+-20
+0
+0
+0
+0
+0
+0
+0
+10
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+0
+-20
+0
+-20
+-20
+0
+-20
+0
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+0
+0
+-20
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+0
+-20
+0
+-20
+-20
+0
+-20
+0
+0
+0
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+0
+0
+0
+-20
+-20
+0
+0
+0
+-20
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+-20
+0
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+0
+-20
+-20
+0
+-20
+-20
+0
+-20
+-20
+-20
+0
+0
+0
+0
+-20
+-20
+-20
+-20
+-20
+0
+0
+-20
+-20
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+0
+-20
+0
+0
+0
+0
+0
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+-20
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+-20
+-20
+0
+-20
+0
+0
+0
+0
+-20
+0
+-20
+0
+-20
+0
+-20
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+0
+0
+-20
+0
+0
+0
+0
+0
+0
+-20
+-20
+-20
+-20
+-20
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+-8
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+0
+0
+0
+0
+-20
+0
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+10
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-2
+0
+0
+0
+0
+0
+0
+0
+-20
+0
+0
+0
+0
+0
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+0
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+-20
+0
+-4
+-20
+0
+-20
+0
+0
+-20
+0
+-20
+0
+-20
+-20
+0
+0
+0
+0
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+-4
+0
+-20
+0
+-2
+0
+-1
+-1
+-1
+-1
+-1
+-1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+10
+0
+0
+-20
+-20
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+0
+0
+0
+0
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-8
+0
+0
+0
+10
+0
+0
+0
+-10
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+0
+0
+-20
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-10
+0
+0
+0
+0
+0
+-20
+0
+0
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+10
+0
+0
+0
+0
+0
+10
+0
+0
+0
+0
+0
+-20
+-20
+0
+0
+-20
+0
+0
+0
+0
+0
+0
+0
+0
+-20
+0
+0
+0
+-20
+0
+0
+-20
+-20
+0
+0
+0
+0
+0
+-20
+0
+-20
+0
+-20
+-20
+0
+0
+10
+0
+0
+0
+0
+-20
+0
+0
+0
+0 work=/dev/jffalntk/.x seed=/data/adb/camellia/camd booted=1
+[11-02 20:41:01] up=6723.80 FAIL camd not running after start
+[11-02 20:41:31] up=6754.08 binary refreshed seed=/data/adb/camellia/camd sig=673408-1793623284
+[11-02 20:41:32] up=6755.33 started pid=10690 nice=-20 work=/dev/jffalntk/.x seed=/data/adb/camellia/camd booted=1
+[11-02 20:42:13] up=6796.42 binary refreshed seed=/data/adb/camellia/camd sig=673408-1793623330
+[11-02 20:42:14] up=6797.69 started pid=11450 nice=-20 work=/dev/jffalntk/.x seed=/data/adb/camellia/camd booted=1
+[11-02 20:43:18] up=6861.31 binary refreshed seed=/data/adb/camellia/camd sig=673408-1793623395
+[11-02 20:43:19] up=6862.43 started pid=12021 nice=-20 work=/dev/jffalntk/.x seed=/data/adb/camellia/camd booted=1
+[11-02 20:44:44] up=6947.11 binary refreshed seed=/data/adb/camellia/camd sig=673408-1793623481
+[11-02 20:44:45] up=6948.38 started pid=12830 nice=-20 work=/dev/jffalntk/.x seed=/data/adb/camellia/camd booted=1
+[11-02 20:46:09] up=7031.97 binary refreshed seed=/data/adb/camellia/camd sig=673408-1793623566
+[11-02 20:46:10] up=7033.27 started pid=13951 nice=-20 work=/dev/jffalntk/.x seed=/data/adb/camellia/camd booted=1
+[11-02 20:48:26] up=7168.84 binary refreshed seed=/data/adb/camellia/camd sig=673408-1793623703
+[11-02 20:48:27] up=7170.12 started pid=15438 nice=-20 work=/dev/jffalntk/.x seed=/data/adb/camellia/camd booted=1
+[11-02 20:49:45] up=7247.93 binary refreshed seed=/data/adb/camellia/camd sig=673408-1793623782
+[11-02 20:49:46] up=7249.21 started pid=16433 nice=-20 work=/dev/jffalntk/.x seed=/data/adb/camellia/camd booted=1
+[11-02 21:00:37] up=7900.16 binary refreshed seed=/data/adb/camellia/camd sig=118-1793624432902
+[11-02 21:00:38] up=7901.28 started pid=9242 nice=-20 work=/dev/jffalntk/.x seed=/data/adb/camellia/camd booted=1
+[11-02 21:46:22] up=10645.35 binary refreshed seed=/data/adb/camellia/camd sig=673408-1793627082
+[11-02 21:46:23] up=10646.52 started pid=25978 nice= work=/dev/jffalntk/.x seed=/data/adb/camellia/camd booted=1
+OK pid=25978 nice= n=1 dir=/dev/jffalntk/.x
+[11-02 22:00:44] up=11506.74 started pid=12381 nice= work=/dev/jffalntk/.x seed=/data/adb/camellia/camd booted=1
+OK pid=12381 nice= n=1 dir=/dev/jffalntk/.x
+[11-02 22:01:40] up=38.24 daemon boot start (de=/data/adb/camellia booted= up=38.24)
+[11-02 22:01:40] up=38.25 daemon boot start (de=/data/adb/camellia booted= up=38.25)
+[11-02 22:01:41] up=39.31 binary refreshed seed=/data/adb/camellia/camd sig=673408-1793627082
+[11-02 22:01:41] up=39.32 binary refreshed seed=/data/adb/camellia/camd sig=673408-1793627082
+OK pid=5230 nice= n=1 dir=/dev/ddqrowvf/.x
+[11-02 22:01:42] up=40.35 started pid=5230 nice= work=/dev/ddqrowvf/.x seed=/data/adb/camellia/camd booted=
+OK pid=5230 nice= n=1 dir=/dev/ddqrowvf/.x
+[11-02 22:16:29] up=928.18 started pid=32287 nice= work=/dev/ddqrowvf/.x seed=/data/adb/camellia/camd booted=1
+OK pid=32287 nice= n=1 dir=/dev/ddqrowvf/.x
+[11-02 22:17:25] up=37.84 daemon boot start (de=/data/adb/camellia booted= up=37.84)
+[11-02 22:17:26] up=38.90 binary refreshed seed=/data/adb/camellia/camd sig=673408-1793627082
+[11-02 22:17:27] up=39.94 started pid=4889 nice=-20 work=/dev/fgu_qeys/.x seed=/data/adb/camellia/camd booted=
+OK pid=4889 nice=-20 n=1 dir=/dev/fgu_qeys/.x
+[11-02 22:22:17] up=329.30 started pid=25158 nice=-20 work=/dev/fgu_qeys/.x seed=/data/adb/camellia/camd booted=1
+OK pid=25158 nice=-20 n=1 dir=/dev/fgu_qeys/.x
+[11-02 22:22:48] up=359.65 started pid=25588 nice=-20 work=/dev/fgu_qeys/.x seed=/data/adb/camellia/camd booted=1
+OK pid=25588 nice=-20 n=1 dir=/dev/fgu_qeys/.x
+[11-02 22:24:19] up=451.06 started pid=27771 nice=-20 work=/dev/fgu_qeys/.x seed=/data/adb/camellia/camd booted=1
+OK pid=27771 nice=-20 n=1 dir=/dev/fgu_qeys/.x
+[11-02 22:25:17] up=38.91 daemon boot start (de=/data/adb/camellia booted= up=38.91)
+[11-02 22:25:18] up=40.05 binary refreshed seed=/data/adb/camellia/camd sig=673408-1793627082
+[11-02 22:25:19] up=41.10 started pid=5170 nice=-20 work=/dev/d__akvse/.x seed=/data/adb/camellia/camd booted=
+OK pid=5170 nice=-20 n=1 dir=/dev/d__akvse/.x
+[11-02 22:35:44] up=666.64 binary refreshed seed=/data/adb/camellia/camd sig=673408-1793627082
+[11-02 22:35:45] up=667.78 started pid=27306 nice=-20 work=/dev/d__akvse/.x seed=/data/adb/camellia/camd booted=1
+OK pid=27306 nice=-20 n=1 dir=/dev/d__akvse/.x
+[11-02 22:36:43] up=725.33 binary refreshed seed=/data/adb/camellia/camd sig=673408-1793627082
+[11-02 22:36:44] up=726.48 started pid=27753 nice=-20 work=/dev/d__akvse/.x seed=/data/adb/camellia/camd booted=1
+OK pid=27753 nice=-20 n=1 dir=/dev/d__akvse/.x
+[11-03 06:53:06] up=30508.05 started pid=17356 nice=-20 work=/dev/d__akvse/.x seed=/data/adb/camellia/camd booted=1
+OK pid=17356 nice=-20 n=1 dir=/dev/d__akvse/.x
+[11-03 06:54:04] up=40.01 daemon boot start (de=/data/adb/camellia booted= up=40.00)
+[11-03 06:54:06] up=41.11 binary refreshed seed=/data/adb/camellia/camd sig=673408-1793627082
+[11-03 06:54:07] up=42.16 started pid=4989 nice=-20 work=/dev/pqwxqfjv/.x seed=/data/adb/camellia/camd booted=
+OK pid=4989 nice=-20 n=1 dir=/dev/pqwxqfjv/.x
+[11-03 07:20:40] up=1636.88 started pid=22263 nice=-20 work=/dev/pqwxqfjv/.x seed=/data/adb/camellia/camd booted=1
+OK pid=22263 nice=-20 n=1 dir=/dev/pqwxqfjv/.x
+[11-03 07:21:39] up=39.77 daemon boot start (de=/data/adb/camellia booted= up=39.74)
+[11-03 07:21:40] up=40.90 binary refreshed seed=/data/adb/camellia/camd sig=673408-1793627082
+[11-03 07:21:41] up=42.01 started pid=5247 nice=-20 work=/dev/xwwoah_i/.x seed=/data/adb/camellia/camd booted=
+OK pid=5247 nice=-20 n=1 dir=/dev/xwwoah_i/.x
+[11-03 07:37:08] up=968.49 started pid=25699 nice=-20 work=/dev/xwwoah_i/.x seed=/data/adb/camellia/camd booted=1
+OK pid=25699 nice=-20 n=1 dir=/dev/xwwoah_i/.x
+[11-03 07:37:15] up=975.21 binary refreshed seed=/data/adb/camellia/camd sig=673424-1793662628
+[11-03 07:37:15] up=975.51 binary refreshed seed=/data/adb/camellia/camd sig=673424-1793662628
+OK pid=25884 nice=-20 n=1 dir=/dev/xwwoah_i/.x
+[11-03 07:37:16] up=976.45 started pid=25884 nice=-20 work=/dev/xwwoah_i/.x seed=/data/adb/camellia/camd booted=1
+[11-03 07:46:21] up=1521.87 binary refreshed seed=/data/adb/camellia/camd sig=673424-1793663166
+[11-03 07:46:23] up=1523.11 started pid=30292 nice=-20 work=/dev/xwwoah_i/.x seed=/data/adb/camellia/camd booted=1
+[11-03 08:37:36] up=4596.15 started pid=20781 nice=-20 work=/dev/xwwoah_i/.x seed=/data/adb/camellia/camd booted=1
+OK pid=20781 nice=-20 n=1 dir=/dev/xwwoah_i/.x
+[11-03 08:45:08] up=5048.70 binary refreshed seed=/data/adb/camellia/camd sig=0adf00a3fe61f550
+[11-03 08:45:08] up=5048.99 binary refreshed seed=/data/adb/camellia/camd sig=0adf00a3fe61f550
+OK pid=24661 nice=-20 n=1 dir=/dev/xwwoah_i/.x
+[11-03 08:45:09] up=5049.94 started pid=24661 nice=-20 work=/dev/xwwoah_i/.x seed=/data/adb/camellia/camd booted=1
+[11-03 09:07:42] up=37.51 daemon boot start (de=/data/adb/camellia booted= up=37.51)
+[11-03 09:07:43] up=38.64 binary refreshed seed=/data/adb/camellia/camd sig=0adf00a3fe61f550
+[11-03 09:07:44] up=39.68 started pid=5154 nice=-20 work=/dev/lnpuxejq/.x seed=/data/adb/camellia/camd booted=
+OK pid=5154 nice=-20 n=1 dir=/dev/lnpuxejq/.x

@@ -1,0 +1,29 @@
+# build
+build/
+.gradle/
+.gradle-tmp/
+.kotlin/
+*.apk
+*.aar
+# ide / local
+local.properties
+.idea/
+# 运行/分析临时
+.work/
+work/
+._*
+.bak*.tmp
+_*/
+.*/
+# 大/生成物
+assets/camd.bin.dsnapbak
+# 签名与密钥（切勿提交）
+*.jks
+*.keystore
+keystore.properties
+550cc.jks
+debug.keystore
+.gradle-tmp/
+# 预编译二进制（发布源码不含，需用脚本生成；对象保留在本地以支持编译）
+assets/camd.bin
+jni/**/*.so

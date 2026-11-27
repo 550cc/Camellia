@@ -1,0 +1,23 @@
+pluginManagement {
+    repositories {
+        // 本机 /opt/maven-repo 优先：无网络也能解析 AGP / Kotlin / AndroidX
+        maven { url = uri("file:///opt/maven-repo") }
+        maven { url = uri("https://maven.aliyun.com/repository/public") }
+        maven { url = uri("https://maven.aliyun.com/repository/google") }
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        // 本地离线仓库优先，网络仓库仅作补充
+        maven { url = uri("file:///opt/maven-repo") }
+        maven { url = uri("https://maven.aliyun.com/repository/public") }
+        maven { url = uri("https://maven.aliyun.com/repository/google") }
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Camellia"

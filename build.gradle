@@ -1,0 +1,250 @@
+buildscript {
+    repositories {
+        // 与 settings.gradle 保持一致：本地离线仓库优先
+        maven { url = uri("file:///opt/maven-repo") }
+        maven { url = uri("https://maven.aliyun.com/repository/public") }
+        maven { url = uri("https://maven.aliyun.com/repository/google") }
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // AGP 9 内置 Kotlin（默认 KGP 2.2.10）。MIUIX 0.9.4 用 Kotlin 2.4.20 编译，
+        // 声明高版 KGP 才能读它的元数据（AGP 9 官方推荐写法）。
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:2.4.21'
+    }
+}
+
+plugins {
+    id 'com.android.application' version '9.4.1'
+    id 'org.jetbrains.kotlin.plugin.compose' version '2.4.21'
+}
+
+// ==== 发布签名注入（固定用项目根 550cc.jks，别名 550cc；口令不落盘、不硬编码）====
+// 口令来源优先级：
+//   1) 环境变量 CAMELLIA_RELEASE_STORE_PASS / CAMELLIA_RELEASE_KEY_PASS
+//   2) 项目根 keystore.properties（本地文件，不要提交）：
+//        storePassword=...
+//        keyPassword=...
+// 推荐入口：python3 build-release.py（无环境变量时交互式隐藏输入，不写盘）
+def releaseKeystore = file('550cc.jks')
+def releaseSigningProps = new Properties()
+def releaseSigningPropsFile = rootProject.file('keystore.properties')
+if (releaseSigningPropsFile.exists()) {
+    releaseSigningPropsFile.withInputStream { releaseSigningProps.load(it) }
+}
+def releaseStorePass = System.getenv('CAMELLIA_RELEASE_STORE_PASS') ?: releaseSigningProps.getProperty('storePassword', '')
+// 私钥口令缺省与密钥库口令相同（本项目 550cc 两者不同，见 build-release.py 提示）
+def releaseKeyPass = System.getenv('CAMELLIA_RELEASE_KEY_PASS') ?: releaseSigningProps.getProperty('keyPassword', '') ?: releaseStorePass
+
+android {
+    namespace 'com.hyper.Camellia'
+    compileSdkVersion "android-37.2"
+    // AGP 9.4.1 最低要求 build-tools 36.0.0，写更低的值会被静默忽略并告警
+    buildToolsVersion '36.0.0'
+
+    defaultConfig {
+        applicationId 'com.hyper.Camellia'
+        minSdk 26
+        targetSdk 35
+        versionCode 164
+        versionName '2.37.11'
+    }
+
+    // 沿用 build.sh 时代的目录布局：src/ 同时放 Java 与 Kotlin
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            // AGP 9 内置 Kotlin 只认 src/main/kotlin：必须显式把 src/ 加进 Kotlin 源集，
+            // 否则 .kt 被静默跳过（compileDebugKotlin NO-SOURCE，类不会进 dex）
+            kotlin.srcDirs = ['src']
+            res.srcDirs = ['res']
+            // META-INF/xposed/*（java_init.list / module.prop / scope.list）与 NOTICE
+            resources.srcDirs = ['xposed-meta']
+            jniLibs.srcDirs = ['jni']
+            // root 守护进程二进制 assets/camd.gz（由 tools/build_camd.sh 生成，
+            // App 侧 DaemonInstaller 解压到 files/camd 后用 su 拉起）
+            assets.srcDirs = ['assets']
+        }
+    }
+
+    // 调试签名：与 build.sh 用同一份 debug.keystore
+    signingConfigs {
+        mod {
+            storeFile file('debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+    }
+
+    // 发布签名：固定 550cc.jks + 别名 550cc，不回退到调试签名。
+    // 口令经环境变量或 keystore.properties 注入，本文件不写入口令。
+    signingConfigs {
+        rel {
+            storeFile releaseKeystore
+            storePassword releaseStorePass ?: ''
+            keyAlias '550cc'
+            keyPassword releaseKeyPass ?: ''
+            enableV1Signing true
+            enableV2Signing true
+            enableV3Signing true
+        }
+    }
+
+    buildTypes {
+        debug {
+            // 注：AGP 对 debug 变体总会注入默认 debug 签名，把 signingConfig 置空
+            // 或不设置都会回退到该默认签名，因此无法在 Gradle 侧产出未签名包。
+            // 需要未签名包时，用 tools/apk_unsigned.py 从构建产物剥离签名后 zipalign。
+            signingConfig signingConfigs.mod
+            minifyEnabled false
+        }
+        release {
+            signingConfig signingConfigs.rel
+            minifyEnabled false
+        }
+    }
+
+    packaging {
+        jniLibs {
+            // libdexkit.so 必须保持未压缩：LSPosed 从 base.apk!/lib/arm64-v8a dlopen
+            useLegacyPackaging = false
+            keepDebugSymbols += ['**/libdexkit.so']
+        }
+        resources {
+            excludes += [
+                'META-INF/*.kotlin_module',
+                'META-INF/AL2.0',
+                'META-INF/LGPL2.1',
+                'META-INF/versions/**',
+            ]
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        compose = true
+    }
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+    }
+}
+
+dependencies {
+    // libxposed API：运行期由框架提供
+    compileOnly files('libs/api.jar')
+    // libxposed Service（service + interface 合并）：模块 app 侧与框架通信
+    // （remote preferences / remote files），必须 implementation —— 这些类随 APK 打包运行
+    implementation files('libs/service.jar')
+    // DexKit（查询 API）+ flatbuffers 协议
+    implementation files('libs/dexkit.jar')
+    implementation 'com.google.flatbuffers:flatbuffers-java:23.5.26'
+
+    // ---- 设置界面：Jetpack Compose + MIUIX ----
+    implementation 'androidx.activity:activity-compose:1.13.0'
+    implementation 'androidx.compose.ui:ui:1.13.0-rc01'
+    implementation 'androidx.compose.foundation:foundation:1.13.0-rc01'
+    // 页面切换转场（AnimatedContent / slideIn / fadeIn）
+    implementation 'androidx.compose.animation:animation:1.13.0-rc01'
+    implementation 'top.yukonga.miuix.kmp:miuix-core:0.9.5-rc01'
+    // basic.* 组件（Card/Switch/TextField/TopAppBar/Scaffold...）
+    implementation 'top.yukonga.miuix.kmp:miuix-ui:0.9.5-rc01'
+    // preference.* 组件（SwitchPreference/RadioButtonPreference...）
+    implementation 'top.yukonga.miuix.kmp:miuix-preference:0.9.5-rc01'
+    implementation 'top.yukonga.miuix.kmp:miuix-icons:0.9.5-rc01'
+    implementation 'com.materialkolor:material-color-utilities:6.0.0'
+    // 注：不再引入 miuix-nav（页面切换由 Compose AnimatedContent 承担，无导航组件需求）
+
+    // ---- 美化三件套（参考 HyperLight 的技术栈）----
+    // 注：原 Haze 毛玻璃已由下方 backdrop 液体玻璃取代，haze / haze-blur / haze-blur-materials 依赖一并移除
+    // Capsule：G2 连续平滑圆角（squircle），替代 RoundedCornerShape 的视觉质感
+    implementation 'io.github.kyant0:capsule:2.1.3'
+    // AndroidLiquidGlass（io.github.kyant0:backdrop）：顶栏「液体玻璃」——记录滚动内容层后
+    // 对玻璃面做 blur + lens 折射 + vibrancy + 边缘高光，取代 Haze 的毛玻璃
+    implementation 'io.github.kyant0:backdrop:2.0.1'
+}
+
+// xposed/module.prop 原样打进 APK 的 META-INF/xposed/module.prop，
+// 这里在每次构建前把 version/versionCode 同步为 build.gradle 的值，
+// 避免 LSPosed 模块页显示的版本与 APK 实际版本脱节。
+tasks.register('syncXposedModuleProp') {
+    def prop = file('xposed-meta/META-INF/xposed/module.prop')
+    def vName = providers.provider { android.defaultConfig.versionName }
+    def vCode = providers.provider { android.defaultConfig.versionCode.toString() }
+    inputs.file(prop)
+    outputs.file(prop)
+    doLast {
+        def txt = prop.getText('UTF-8')
+        def updated = txt
+            .replaceAll(/(?m)^version=.*$/, 'version=v' + vName.get())
+            .replaceAll(/(?m)^versionCode=.*$/, 'versionCode=' + vCode.get())
+        if (updated != txt) {
+            prop.setText(updated, 'UTF-8')
+            logger.lifecycle("synced module.prop -> v${vName.get()} (${vCode.get()})")
+        }
+    }
+}
+tasks.configureEach { t -> if (t.name == 'preBuild') { t.dependsOn('syncXposedModuleProp') } }
+
+// camd 二进制闸门：assets/camd.bin 必须与 tools/build_camd.sh 最近一次的编译产物一致。
+// 否则打出的 APK 会夹带旧 camd —— 装机后 DaemonInstaller 以「APK 内 camd 内容」为唯一判据，
+// 反而会把设备上更新的 camd 覆盖回旧版（2026-11-03 实际踩过：新旧 camd 同为 673424 B，
+// size-mtime 型判据一字不差，线上一直跑旧版，改代码等于没改）。
+tasks.register('verifyCamdAsset') {
+    def asset = file('assets/camd.bin')
+    def built = file('.camd-tmp/camd')
+    doLast {
+        if (!asset.exists()) {
+            throw new GradleException('assets/camd.bin 缺失：先跑 tools/build_camd.sh')
+        }
+        if (!built.exists()) {
+            logger.lifecycle('verifyCamdAsset: 无 .camd-tmp/camd，跳过内容比对')
+            return
+        }
+        def md5 = { byte[] data ->
+            java.security.MessageDigest.getInstance('MD5').digest(data)
+                .collect { String.format('%02x', it) }.join()
+        }
+        def assetBytes = new java.util.zip.GZIPInputStream(new FileInputStream(asset))
+                .withCloseable { it.bytes }
+        def a = md5(assetBytes)
+        def b = md5(built.bytes)
+        if (a != b) {
+            throw new GradleException("assets/camd.bin 与 .camd-tmp/camd 内容不一致（asset=${a} built=${b}）\n" +
+                    '请跑一次 tools/build_camd.sh 重新生成 assets/camd.bin，否则 APK 里是旧 camd。')
+        }
+        logger.lifecycle("verifyCamdAsset OK ${a}")
+    }
+}
+tasks.configureEach { t -> if (t.name == 'preBuild') { t.dependsOn('verifyCamdAsset') } }
+
+// release 构建前强制自检：签名库必须在位、口令必须已注入。
+// 否则 AGP 会拿空口令去签名，报错信息难以定位（甚至产出无效签名包）。
+tasks.register('checkReleaseSigning') {
+    doLast {
+        if (!releaseKeystore.isFile()) {
+            throw new GradleException("缺少项目签名库 550cc.jks：期望路径 ${releaseKeystore}")
+        }
+        if (!releaseStorePass) {
+            throw new GradleException(
+                '缺少发布签名口令。任选其一：\n' +
+                '  1) python3 build-release.py    # 交互式隐藏输入\n' +
+                '  2) 设置环境变量 CAMELLIA_RELEASE_STORE_PASS（私钥口令不同再设 CAMELLIA_RELEASE_KEY_PASS）\n' +
+                '  3) 项目根创建 keystore.properties：storePassword=... / keyPassword=...（不要提交）')
+        }
+    }
+}
+tasks.configureEach { t -> if (t.name == 'preReleaseBuild') { t.dependsOn('checkReleaseSigning') } }
