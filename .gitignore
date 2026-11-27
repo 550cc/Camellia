@@ -27,3 +27,6 @@ debug.keystore
 # 预编译二进制（发布源码不含，需用脚本生成；对象保留在本地以支持编译）
 assets/camd.bin
 jni/**/*.so
+
+*.bak
+*.bak_*
