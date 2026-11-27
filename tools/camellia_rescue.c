@@ -1,4 +1,8 @@
 /*
+ * 救砖 / 急救自愈（rescue）思路参考自 HyperMount（作者 XKspeed）：https://github.com/XKspeed/HyperMount
+ * 仅借鉴设计思路，针对 Camellia / camd 独立实现，未复制其代码。
+ */
+/*
  * camellia_rescue.c —— camd 的「急救自愈」模块
  *
  * 定位：camd 是 root 常驻进程，SystemUI 崩了它照样活着。所以「发现坏包 →

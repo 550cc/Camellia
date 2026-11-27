@@ -23,7 +23,7 @@
 | **快捷方式屏蔽** | 全局关键词 + 应用专属规则，屏蔽桌面 / 全局搜索里的快捷方式入口 |
 | **小窗增强** | 解除小窗限制、黑名单、通知下拉快速小窗 |
 | **系统桌面** | 长按菜单增强、桌面增强 |
-| **系统界面 / 组件急救（camd）** | root 守护进程 camd：环境自检与修复、崩溃急救、监控；含 eBPF 辅助。救砖思路参考 HyperMount |
+| **系统界面 / 组件急救（camd）** | root 守护进程 camd：环境自检与修复、崩溃急救、监控；含 eBPF 辅助。**救砖（急救自愈）思路参考 HyperMount / XKspeed** |
 | **定时快照备份** | 主题 / 字体 / 桌面布局 / 壁纸 定时快照，可手动/自动，支持恢复 |
 | **主题系统（设置页）** | 界面风格（Miuix / Material3 配色）、色彩标准（2021 / 2025）、色彩风格、强调色、Monet 取色、顶/底栏样式、预测性返回、模糊、界面缩放、说明文字开关 |
 
@@ -106,9 +106,24 @@ gradle assembleDebug
 
 ## 依赖与许可
 
-- 依赖：MIUIX `top.yukonga.miuix.kmp` 0.9.5-rc01、Jetpack Compose 1.13、`material-color-utilities` 6.0.0、Kyant `backdrop` 2.0.1 / `capsule` 2.1.3；本地 `libs/`（libxposed、DexKit、FlatBuffers）。
-- 完整开源库与许可见 App「关于 → 开源库引用」及 `notice/`、APK 内 `META-INF/NOTICE-DEPS.txt`。
-- 本项目采用 **Apache License 2.0**，见 [LICENSE](LICENSE)。
+| 依赖 | 许可证 |
+|---|---|
+| MIUIX（`top.yukonga.miuix.kmp`） | Apache-2.0 |
+| Jetpack Compose / AndroidX | Apache-2.0 |
+| material-color-utilities（`com.materialkolor`） | MIT + Apache-2.0 |
+| Kyant `backdrop` / `capsule` | Apache-2.0 |
+| libxposed `api` / `service` | Apache-2.0 |
+| DexKit（`org.luckypray`） | Apache-2.0（另可选 LGPL-3.0） |
+| FlatBuffers | Apache-2.0 |
+| Kotlin stdlib / kotlinx-coroutines | Apache-2.0 |
+
+结论：本模块所引用的开源库**全部为 Apache-2.0 / MIT 宽松许可，无 GPL 传染性依赖**，因此本项目采用 **Apache License 2.0**（见 [LICENSE](LICENSE)）。三方版权与许可见 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)、`notice/` 及 APK 内 `META-INF/NOTICE-DEPS.txt`。
+
+## 参考项目（思路来源，非代码复制）
+
+- **camd「救砖 / 急救自愈」思路** → 参考 **HyperMount**（作者 **XKspeed**）：https://github.com/XKspeed/HyperMount
+- **系统安全组件拦截 + Rust 桌面 Hook 思路** → 参考 **WOMMO**（作者 **YifePlayte**）：https://github.com/YifePlayte/WOMMO
+- 其它灵感参考：HyperCeiler（ReChronoRain）、HyperLight（KiminonawaResa），详见鸣谢。
 
 ## 鸣谢
 
